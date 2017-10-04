@@ -1,0 +1,97 @@
+<?php
+require_once "../Controller/templateController.php";
+$template = new templateController();
+$template->template();
+?>
+    <h1>Cadastrar Membro</h1>
+    <div class="col-md-10">
+
+        <div class="box box-danger">
+            <div class="box-header with-border">
+                <h3 class="box-title" style="color: #0b93d5"><strong>*Todos os campos são de preenchimento obrigatório</strong></h3>
+            </div>
+            <!-- /.box-header -->
+            <!-- form start -->
+            <form class="form-horizontal">
+                <div class="box-body">
+                    <div class="form-group ">
+                        <label for="cpf" class="col-sm-2 control-label">CPF</label>
+                        <div class="col-sm-2">
+                            <input type="text" class="form-control" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" placeholder="(xxx.xxx.xxx-xx)" data-inputmask='"mask": "(999) 999-9999"' data-mask>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="nome" class="col-sm-2 control-label">Nome</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control" id="nome" placeholder="Nome Completo">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="usuario" class="col-sm-2 control-label">Usuario</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control" id="usuario" placeholder="Usuario para acessar o sistema">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="senha" class="col-sm-2 control-label">Senha</label>
+                        <div class="col-sm-8">
+                            <input type="password" class="form-control" id="senha" placeholder="Senha">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="rg" class="col-sm-2 control-label">RG</label>
+                        <div class="col-sm-8">
+                            <input type="rg" class="form-control" id="rg" placeholder="RG">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="email" class="col-sm-2 control-label">Email</label>
+                        <div class="col-sm-8">
+                            <input type="email" class="form-control" id="email" placeholder="Email">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="celular" class="col-sm-2 control-label">Celular</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control" id="celular" placeholder="Celular">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="telefone" class="col-sm-2 control-label">Telefone Fixo</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control" placeholder="Telefone Fixo" data-inputmask='"mask": "(999) 999-9999"' data-mask>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="endereco" class="col-sm-2 control-label">Endereço</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control" placeholder="Endereço">
+                        </div>
+                    </div>
+
+                    <div class="icheckbox_flat-green checked" aria-checked="false" aria-disabled="false" style="position: relative;"><input type="checkbox" class="flat-red" checked="" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>
+                    <div class="form-group">
+
+                        <div class="col-sm-8">
+                            <label>
+                                <input type="radio" name="r3" class="flat-red" checked>
+                            </label>
+                            <label>
+                                <input type="radio" name="r3" class="flat-red">
+                            </label>
+                            <label>
+                                <input type="radio" name="r3" class="flat-red" disabled>
+                                Flat green skin radio
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.box-body -->
+                <div class="box-footer">
+                    <button type="submit" class="btn btn-default">Cancel</button>
+                    <button type="submit" class="btn btn-success pull-right">Cadastrar</button>
+                </div>
+                <!-- /.box-footer -->
+            </form>
+        </div>
+<?php $template->templateF(); ?>
