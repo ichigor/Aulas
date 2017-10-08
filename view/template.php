@@ -20,6 +20,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <link rel="stylesheet" href="bower_components/jvectormap/jquery-jvectormap.css">
     <!-- Theme style -->
     <link rel="stylesheet" href="dist/css/AdminLTE.min.css">
+
+
+
     <!-- AdminLTE Skins. Choose a skin from the css/skins
          folder instead of downloading all of them to reduce the load. -->
     <link rel="stylesheet" href="dist/css/skins/_all-skins.min.css">
@@ -64,7 +67,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <!-- Menu Toggle Button -->
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <!-- The user image in the navbar-->
-
+                <div class="col-md-3 col-sm-4"><i class="fa fa-fw fa-user"></i></div>
               <!-- hidden-xs hides the username on small devices so only the image appears. -->
               <span class="hidden-xs">Gerente</span>
             </a>

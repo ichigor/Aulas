@@ -98,4 +98,5 @@ $template->template();
                 <!-- /.box-footer -->
             </form>
         </div>
+    </div>
 <?php $template->templateF(); ?>

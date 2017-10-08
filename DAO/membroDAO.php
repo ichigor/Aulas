@@ -22,9 +22,10 @@ $tipo = $_POST["tipo"];
 
 //FUNCAO CHAMADA NO CONTROLLER
 //insereMembro($conexao, $nome, $usuario, $senha, $celular, $email, $cpf, $telefone, $endereco, $rg, $tipo);
-//listaMembros($conexao);
+listaMembros($conexao);
 //inativarMembro($conexao, 10);
 //alteraMembro($conexao,10,"teste","teste","123","9999999","fula@asdas","66666","ende","4564645",1);
+//ativarMembro($conexao, 10);
 
 
 //VAI RECEBE UM OBJETO USUARIO E UMA CONEXAO
@@ -40,6 +41,9 @@ function listaMembros($conexao){
     while($membro = mysqli_fetch_assoc($resultado)){
         array_push($membros,$membro);
     }
+//    echo "<pre>";
+//    var_dump($membros);
+//    echo "</pre>";
     return $membros;
 }
 
@@ -51,5 +55,11 @@ function inativarMembro($conexao, $idUsuario){
 function alteraMembro($conexao, $idUsuario, $nome, $usuario, $senha, $celular, $email, $telefone, $endereco, $rg, $tipo){
     $query = "update usuario set nome= '{$nome}', usuario = '{$usuario}', senha= '{$senha}',
   celular = '{$celular}', email= '{$email}', telefone='{$telefone}', endereco='{$endereco}', rg='{$rg}', tipo='{$tipo}' where idUsuario ='{$idUsuario}'";
+    return mysqli_query($conexao, $query);
+}
+
+
+function ativarMembro($conexao, $idUsuario){
+    $query = "update usuario set ativo='1' where idUsuario ='{$idUsuario}'";
     return mysqli_query($conexao, $query);
 }
