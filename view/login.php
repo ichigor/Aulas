@@ -36,7 +36,7 @@
     <!-- /.login-logo -->
     <div class="login-box-body">
 
-        <form action="view/index2.php" method="post">
+        <form action="view/principalGerente.php" method="post">
             <div class="form-group has-feedback">
                 <input type="text" class="form-control" placeholder="Usuario">
                 <span class="glyphicon glyphicon-user form-control-feedback"></span>

@@ -78,7 +78,7 @@ $template->template();
                     <div class="form-group">
                         <label class="col-sm-2 control-label">Descrição</label>
                         <div class="col-sm-5">
-                        <textarea class="form-control" rows="8" placeholder="Enter ..."></textarea>
+                        <textarea class="form-control" rows="8" placeholder="Digite a descrição do que precisa ser realizado"></textarea>
                         </div>
                     </div>
 

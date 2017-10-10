@@ -11,6 +11,9 @@ class templateController{
         include "../view/template.php";
     }
     public function templateF(){
-        include "../view/templateF.php";
+        include "../view/templateFooter.php";
+    }
+    public function templateColaborador(){
+        include "../view/templateColaborador.php";
     }
 }

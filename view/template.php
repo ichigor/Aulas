@@ -45,7 +45,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <header class="main-header">
 
     <!-- Logo -->
-    <a href="index2.php" class="logo">
+    <a href="principalGerente.php" class="logo">
       <!-- logo for regular state and mobile devices -->
       <span class="logo-lg"><b>Controle de Tarefas</b></span>
     </a>
@@ -104,7 +104,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
       <ul class="sidebar-menu" data-widget="tree">
 
         <!-- Optionally, you can add icons to the links -->
-        <li class="active"><a href="./index2.php"><i class="fa fa-home"></i> <span>Home</span></a></li>
+        <li class="active"><a href="principalGerente.php"><i class="fa fa-home"></i> <span>Home</span></a></li>
         <li class="treeview">
           <a href="#"><i class="fa fa-users"></i> <span>Membros Equipe</span>
             <span class="pull-right-container">
