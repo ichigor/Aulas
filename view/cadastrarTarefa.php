@@ -20,7 +20,7 @@ $template->template();
             <br><br>
             <!-- /.box-header -->
             <!-- form start  ALTERAR PARA ENVIAR PARA O CONTROLLER-->
-            <form class="form-horizontal" action="../DAO/membroDAO.php" method="POST">
+            <form class="form-horizontal" action="../DAO/tarefaDAO.php" method="POST">
                 <div class="box-body">
                     <div class="form-group ">
                         <label for="nomeTarefa" class="col-sm-2 control-label">Nome Tarefa</label>
@@ -31,24 +31,24 @@ $template->template();
                     <div class="form-group">
                         <label class="col-sm-2 control-label">Frequencia</label>
                         <div class="col-sm-2">
-                            <select class="form-control select2" style="width: 100%;">
-                                <option selected="selected">Diariamente</option>
-                                <option>Mensalmente</option>
-                                <option>Eventualmente</option>
+                            <select name="frequencia" class="form-control select2"  style="width: 100%;">
+                                <option value="Diariamente" selected="selected">Diariamente</option>
+                                <option value="Mensamente">Mensalmente</option>
+                                <option value="Eventualmente">Eventualmente</option>
                             </select>
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="col-sm-2 control-label">Designado</label>
                         <div class="col-sm-2">
-                            <select class="form-control select2" style="width: 100%;">
-                                <option selected="selected">Colaborador0</option>
-                                <option>Colaborador1</option>
-                                <option>Colaborador2</option>
-                                <option>Colaborador3</option>
-                                <option>Colaborador4</option>
-                                <option>Colaborador5</option>
-                                <option>Colaborador6</option>
+                            <select name="designado" class="form-control select2" style="width: 100%;">
+                                <option value="Colaborador0" selected="selected">Colaborador0</option>
+                                <option value="Colaborador1">Colaborador1</option>
+                                <option value="Colaborador2">Colaborador2</option>
+                                <option value="Colaborador3">Colaborador3</option>
+                                <option value="Colaborador4">Colaborador4</option>
+                                <option value="Colaborador5">Colaborador5</option>
+                                <option value="Colaborador6">Colaborador6</option>
                             </select>
                         </div>
                     </div>
@@ -59,7 +59,7 @@ $template->template();
                             <div class="input-group-addon">
                                 <i class="fa fa-calendar"></i>
                             </div>
-                            <input type="text" class="form-control pull-right" id="datepicker">
+                            <input type="text" class="form-control pull-right" id="datepicker" name="dataInicial">
                         </div>
                         </div>
                     </div>
@@ -70,7 +70,7 @@ $template->template();
                                 <div class="input-group-addon">
                                     <i class="fa fa-calendar"></i>
                                 </div>
-                                <input type="text" class="form-control pull-right" id="datepicker">
+                                <input type="text" class="form-control pull-right" id="datepicker" name="dataLimite">
                             </div>
                         </div>
                     </div>
@@ -78,7 +78,7 @@ $template->template();
                     <div class="form-group">
                         <label class="col-sm-2 control-label">Descrição</label>
                         <div class="col-sm-5">
-                        <textarea class="form-control" rows="8" placeholder="Digite a descrição do que precisa ser realizado"></textarea>
+                        <textarea class="form-control" rows="8" placeholder="Digite a descrição do que precisa ser realizado" name="descricao"></textarea>
                         </div>
                     </div>
 
