@@ -1,21 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8271f99f-637b-46bc-bebc-5b03568cebbb" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/DAO/historicoDAO.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/DAO/tarefaDAO.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/Historico.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/Tarefa.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/view/principalColaborador.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/view/templateColaborador.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/view/index2.php" afterPath="$PROJECT_DIR$/view/principalGerente.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/view/templateF.php" afterPath="$PROJECT_DIR$/view/templateFooter.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Controller/templateController.php" afterPath="$PROJECT_DIR$/Controller/templateController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/view/cadastrarTarefa.php" afterPath="$PROJECT_DIR$/view/cadastrarTarefa.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/view/login.php" afterPath="$PROJECT_DIR$/view/login.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/view/template.php" afterPath="$PROJECT_DIR$/view/template.php" />
-    </list>
+    <list default="true" id="8271f99f-637b-46bc-bebc-5b03568cebbb" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -235,12 +221,12 @@
       <workItem from="1507222654237" duration="11428000" />
       <workItem from="1507420926144" duration="25000" />
       <workItem from="1507489893888" duration="5955000" />
-      <workItem from="1507655026025" duration="1245000" />
+      <workItem from="1507655026025" duration="1550000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="40367000" />
+    <option name="totallyTimeSpent" value="40672000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
