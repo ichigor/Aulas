@@ -28,11 +28,12 @@ $dado = buscaMembro($conexao, $idUsuario);
         <form class="form-horizontal" action="../Controller/membroController.php" method="POST">
             <input type="hidden" value="update" name="funcionalidade">
             <input type="hidden" value="<?= $dado['idUsuario'] ?>" name="idUsuario">
+            <input type="hidden" value="<?= $dado['cpf'] ?>" name="cpf">
             <div class="box-body">
                 <div class="form-group ">
                     <label for="cpf" class="col-sm-2 control-label">CPF</label>
                     <div class="col-sm-2">
-                        <input type="text" class="form-control" name="cpf" placeholder="CPF" data-inputmask='"mask": "(999) 999-9999"' data-mask value="<?=$dado['cpf'] ?>">
+                        <input type="text" class="form-control" name="cpf" placeholder="CPF" disabled data-inputmask='"mask": "(999) 999-9999"' data-mask value="<?=$dado['cpf'] ?>">
                     </div>
                 </div>
 

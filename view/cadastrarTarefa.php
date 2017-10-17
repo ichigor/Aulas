@@ -24,7 +24,7 @@ $template->template();
                 <div class="box-body">
                     <div class="form-group ">
                         <label for="nomeTarefa" class="col-sm-2 control-label">Nome Tarefa</label>
-                        <div class="col-sm-2">
+                        <div class="col-sm-5">
                             <input type="text" class="form-control" name="nomeTarefa" placeholder="Nome da Tarefa">
                         </div>
                     </div>
@@ -77,7 +77,7 @@ $template->template();
 
                     <div class="form-group">
                         <label class="col-sm-2 control-label">Descrição</label>
-                        <div class="col-sm-5">
+                        <div class="col-sm-8">
                         <textarea class="form-control" rows="8" placeholder="Digite a descrição do que precisa ser realizado" name="descricao"></textarea>
                         </div>
                     </div>

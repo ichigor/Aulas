@@ -23,7 +23,6 @@ require_once "../DAO/membroDAO.php";
             <table class="table table-striped">
                 <tr>
                     <th>Nome</th>
-
                     <th>Alterar</th>
                     <th>Inativar</th>
                 </tr>
