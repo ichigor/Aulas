@@ -8,12 +8,7 @@
 
 require_once("../util/conecta.php");
 
-$nomeTarefa = $_POST["nomeTarefa"];
-$frequencia = $_POST["frequencia"];
-$designado = $_POST["designado"];
-$dataInicial = $_POST["dataInicial"];
-$dataLimite = $_POST["dataLimite"];
-$descricao = $_POST["descricao"];
+
 
 
 //insereTarefa($conexao, $nomeTarefa, $frequencia, $descricao, $dataInicial, $dataLimite, $designado);
@@ -36,9 +31,6 @@ function listaTarefas($conexao)
     while ($tarefa = mysqli_fetch_assoc($resultado)) {
         array_push($tarefas, $tarefa);
     }
-    echo "<pre>";
-    var_dump($tarefas);
-    echo "</pre>";
     return $tarefas;
 }
 
