@@ -51,14 +51,20 @@ function inativarMembro($conexao, $idUsuario){
     return mysqli_query($conexao, $query);
 }
 
-function alteraMembro($conexao, $idUsuario, $nome, $usuario, $senha, $celular, $email, $telefone, $endereco, $rg, $tipo){
-    $query = "update usuario set nome= '{$nome}', usuario = '{$usuario}', senha= '{$senha}',
-  celular = '{$celular}', email= '{$email}', telefone='{$telefone}', endereco='{$endereco}', rg='{$rg}', tipo='{$tipo}' where idUsuario ='{$idUsuario}'";
+function alteraMembro($conexao, $m, $idUsuario){
+
+    $query = "update usuario set nome= '{$m->nome}', usuario = '{$m->usuario}', senha= '{$m->senha}',celular = '{$m->celular}', email= '{$m->email}', telefone='{$m->telefone}', endereco='{$m->endereco}', rg='{$m->rg}', tipo='{$m->tipo}' where idUsuario ='{$idUsuario}'";
     return mysqli_query($conexao, $query);
+
 }
 
 
 function ativarMembro($conexao, $idUsuario){
     $query = "update usuario set ativo='1' where idUsuario ='{$idUsuario}'";
     return mysqli_query($conexao, $query);
+}
+
+function buscaMembro($conexao, $idUsuario){
+    $resultado = mysqli_query($conexao, "select * from usuario where idUsuario={$idUsuario}");
+    return mysqli_fetch_assoc($resultado);
 }

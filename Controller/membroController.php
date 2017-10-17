@@ -32,7 +32,26 @@ if($funcionalidade == "create"){
     header("Location: ../view/principalGerente.php");
 
 }elseif ($funcionalidade == "update"){
-    //alteraMembro($conexao,10,"teste","teste","123","9999999","fula@asdas","66666","ende","4564645",1);
+
+    $idUsuario = $_POST["idUsuario"];
+    $nome = $_POST["nome"];
+    $usuario = $_POST["usuario"];
+    $senha = $_POST["senha"];
+    $celular = $_POST["celular"];
+    $email = $_POST['email'];
+    $cpf = $_POST["cpf"];
+    $telefone = $_POST["telefone"];
+    $endereco = $_POST["endereco"];
+    $rg = $_POST["rg"];
+    $ativo = 1;
+    $tipo = $_POST["tipo"];
+
+    $m = new Membro($nome, $usuario, $senha, $celular, $ativo, $email, $cpf, $telefone, $endereco, $rg, $tipo);
+
+    alteraMembro($conexao, $m, $idUsuario);
+
+    header("Location: ../view/listarMembros.php");
+
 }elseif ($funcionalidade == "list"){
     listaMembros($conexao);
 }elseif ($funcionalidade == "delete"){

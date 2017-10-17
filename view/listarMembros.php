@@ -34,13 +34,18 @@ require_once "../DAO/membroDAO.php";
 
                 <tr>
                     <td><?= $membro['nome'] ?></td>
-
-                    <td><a class="btn btn-primary" href="produto-altera-formulario.php?id=<?=$produto['id']?>"><span class="glyphicon glyphicon-refresh"></a></td>
+                    <td>
+                        <form class="" action="alterarMembro.php" method="post">
+                            <input type="hidden" name="idUsuario" value="<?=$membro['idUsuario']?>">
+                            <input type="hidden" name="funcionalidade" value="update">
+                            <button class="btn btn-primary"><span class="glyphicon glyphicon-refresh"></span></button>
+                        </form>
+                    </td>
                     <td>
                         <form class="" action="../Controller/membroController.php" method="post">
                             <input type="hidden" name="idUsuario" value="<?=$membro['idUsuario']?>">
                             <input type="hidden" name="funcionalidade" value="delete">
-                            <button class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span></button>
+                            <button class="btn btn-danger"><span class="glyphicon glyphicon-remove"></span></button>
                         </form>
                     </td>
                 </tr>

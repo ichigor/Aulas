@@ -36,7 +36,7 @@ require_once "../DAO/membroDAO.php";
                             <form class="" action="../Controller/membroController.php" method="post">
                                 <input type="hidden" name="idUsuario" value="<?=$membro['idUsuario']?>">
                                 <input type="hidden" name="funcionalidade" value="active">
-                                <button class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span></button>
+                                <button class="btn btn-success"><span class="glyphicon glyphicon-ok"></span></button>
                             </form>
                         </td>
 
