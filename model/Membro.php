@@ -9,17 +9,17 @@
 
 class Membro{
 
-    private $nome;
-    private $usuario;
-    private $senha;
-    private $celular;
-    private $ativo;
-    private $mail;
-    private $cpf;
-    private $telefone;
-    private $endereco;
-    private $rg;
-    private $tipo;
+    public $nome;
+    public $usuario;
+    public $senha;
+    public $celular;
+    public $ativo;
+    public $email;
+    public $cpf;
+    public $telefone;
+    public $endereco;
+    public $rg;
+    public $tipo;
 
     /**
      * Usuario constructor.
@@ -35,14 +35,14 @@ class Membro{
      * @param $rg
      * @param $tipo
      */
-    public function __construct($nome, $usuario, $senha, $celular, $ativo, $mail, $cpf, $telefone, $endereco, $rg, $tipo)
+    public function __construct($nome, $usuario, $senha, $celular, $ativo, $email, $cpf, $telefone, $endereco, $rg, $tipo)
     {
         $this->nome = $nome;
         $this->usuario = $usuario;
         $this->senha = $senha;
         $this->celular = $celular;
         $this->ativo = $ativo;
-        $this->mail = $mail;
+        $this->email = $email;
         $this->cpf = $cpf;
         $this->telefone = $telefone;
         $this->endereco = $endereco;

@@ -9,63 +9,45 @@
 require_once "../Controller/templateController.php";
 $template = new templateController();
 $template->template();
+require_once "../DAO/membroDAO.php";
 ?>
 
-    <h1>LISTAR MEMBROS</h1>
+    <h1>Lista de Membros</h1>
 
     <div class="box">
         <div class="box-header">
-            <h3 class="box-title">Striped Full Width Table</h3>
+            <h3 class="box-title">*Dados de todos os membros ativos no sistema</h3>
         </div>
         <!-- /.box-header -->
         <div class="box-body no-padding">
             <table class="table table-striped">
                 <tr>
-                    <th style="width: 10px">#</th>
-                    <th>Task</th>
-                    <th>Progress</th>
-                    <th style="width: 40px">Label</th>
+                    <th>Nome</th>
+
+                    <th>Alterar</th>
+                    <th>Inativar</th>
                 </tr>
+    <?php
+        $membros = listaMembrosAtivos($conexao);
+        foreach ($membros as $membro) :
+    ?>
+
                 <tr>
-                    <td>1.</td>
-                    <td>Update software</td>
+                    <td><?= $membro['nome'] ?></td>
+
+                    <td><a class="btn btn-primary" href="produto-altera-formulario.php?id=<?=$produto['id']?>"><span class="glyphicon glyphicon-refresh"></a></td>
                     <td>
-                        <div class="progress progress-xs">
-                            <div class="progress-bar progress-bar-danger" style="width: 55%"></div>
-                        </div>
+                        <form class="" action="../Controller/membroController.php" method="post">
+                            <input type="hidden" name="idUsuario" value="<?=$membro['idUsuario']?>">
+                            <input type="hidden" name="funcionalidade" value="delete">
+                            <button class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span></button>
+                        </form>
                     </td>
-                    <td><span class="badge bg-red">55%</span></td>
                 </tr>
-                <tr>
-                    <td>2.</td>
-                    <td>Clean database</td>
-                    <td>
-                        <div class="progress progress-xs">
-                            <div class="progress-bar progress-bar-yellow" style="width: 70%"></div>
-                        </div>
-                    </td>
-                    <td><span class="badge bg-yellow">70%</span></td>
-                </tr>
-                <tr>
-                    <td>3.</td>
-                    <td>Cron job running</td>
-                    <td>
-                        <div class="progress progress-xs progress-striped active">
-                            <div class="progress-bar progress-bar-primary" style="width: 30%"></div>
-                        </div>
-                    </td>
-                    <td><span class="badge bg-light-blue">30%</span></td>
-                </tr>
-                <tr>
-                    <td>4.</td>
-                    <td>Fix and squish bugs</td>
-                    <td>
-                        <div class="progress progress-xs progress-striped active">
-                            <div class="progress-bar progress-bar-success" style="width: 90%"></div>
-                        </div>
-                    </td>
-                    <td><span class="badge bg-green">90%</span></td>
-                </tr>
+
+    <?php
+        endforeach
+    ?>
             </table>
         </div>
         <!-- /.box-body -->

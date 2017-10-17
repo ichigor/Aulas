@@ -7,33 +7,14 @@
  */
 require_once("../util/conecta.php");
 
-//CONTROLLER RECEBE MONTA UM USUARIO E MANDA PRO DAO
-$nome = $_POST["nome"];
-$usuario = $_POST["usuario"];
-$senha = $_POST["senha"];
-$celular = $_POST["celular"];
-$email = $_POST['email'];
-$cpf = $_POST["cpf"];
-$telefone = $_POST["telefone"];
-$endereco = $_POST["endereco"];
-$rg = $_POST["rg"];
-$tipo = $_POST["tipo"];
 
+function insereMembro($conexao, $m){
 
-//FUNCAO CHAMADA NO CONTROLLER
-//insereMembro($conexao, $nome, $usuario, $senha, $celular, $email, $cpf, $telefone, $endereco, $rg, $tipo);
-listaMembros($conexao);
-//inativarMembro($conexao, 10);
-//alteraMembro($conexao,10,"teste","teste","123","9999999","fula@asdas","66666","ende","4564645",1);
-//ativarMembro($conexao, 10);
-
-
-//VAI RECEBE UM OBJETO USUARIO E UMA CONEXAO
-function insereMembro($conexao, $nome, $usuario, $senha, $celular, $email, $cpf, $telefone, $endereco, $rg, $tipo){
     $query="insert into usuario (nome, usuario, senha, celular, ativo, email, cpf, telefone, endereco, rg, tipo) values
-            ('{$nome}','{$usuario}','{$senha}','{$celular}','1', '{$email}', '{$cpf}','{$telefone}','{$endereco}','{$rg}', '{$tipo}')";
+            ('{$m->nome}','{$m->usuario}','{$m->senha}','{$m->celular}','{$m->ativo}', '{$m->email}', '{$m->cpf}','{$m->telefone}','{$m->endereco}','{$m->rg}', '{$m->tipo}')";
     return mysqli_query($conexao, $query);
 }
+
 
 function listaMembros($conexao){
     $membros = array();
@@ -41,11 +22,29 @@ function listaMembros($conexao){
     while($membro = mysqli_fetch_assoc($resultado)){
         array_push($membros,$membro);
     }
-//    echo "<pre>";
-//    var_dump($membros);
-//    echo "</pre>";
     return $membros;
 }
+
+
+function listaMembrosAtivos($conexao){
+    $membros = array();
+    $resultado = mysqli_query($conexao, "select * from usuario where ativo=1");
+    while($membro = mysqli_fetch_assoc($resultado)){
+        array_push($membros,$membro);
+    }
+    return $membros;
+}
+
+
+function listaMembrosDesativados($conexao){
+    $membros = array();
+    $resultado = mysqli_query($conexao, "select * from usuario where ativo=0");
+    while($membro = mysqli_fetch_assoc($resultado)){
+        array_push($membros,$membro);
+    }
+    return $membros;
+}
+
 
 function inativarMembro($conexao, $idUsuario){
     $query = "update usuario set ativo='0' where idUsuario ='{$idUsuario}'";

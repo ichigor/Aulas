@@ -12,8 +12,8 @@ $template->template();
             </div>
             <br><br>
             <!-- /.box-header -->
-            <!-- form start  ALTERAR PARA ENVIAR PARA O CONTROLLER-->
-            <form class="form-horizontal" action="../DAO/membroDAO.php" method="POST">
+            <!-- form start -->
+            <form class="form-horizontal" action="../Controller/membroController.php" method="POST">
                 <div class="box-body">
                     <div class="form-group ">
                         <label for="cpf" class="col-sm-2 control-label">CPF</label>
@@ -21,6 +21,7 @@ $template->template();
                             <input type="text" class="form-control" name="cpf" placeholder="CPF" data-inputmask='"mask": "(999) 999-9999"' data-mask>
                         </div>
                     </div>
+                    <input type="hidden" value="create" name="funcionalidade">
                     <div class="form-group">
                         <label for="nome" class="col-sm-2 control-label">Nome</label>
                         <div class="col-sm-8">
