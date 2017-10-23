@@ -24,14 +24,14 @@ $dado = buscaMembro($conexao, $idUsuario);
         <!-- /.box-header -->
         <!-- form start -->
         <form class="form-horizontal" action="../Controller/membroController.php" method="POST">
-            <input type="hidden" value="update" name="funcionalidade">
+            <input type="hidden" value="voltar" name="funcionalidade">
             <input type="hidden" value="<?= $dado['idUsuario'] ?>" name="idUsuario">
             <input type="hidden" value="<?= $dado['cpf'] ?>" name="cpf">
             <div class="box-body">
                 <div class="form-group ">
                     <label for="cpf" class="col-sm-2 control-label">CPF</label>
                     <div class="col-sm-2">
-                        <input type="text" class="form-control" name="cpf" placeholder="CPF" disabled data-inputmask='"mask": "(999) 999-9999"' data-mask value="<?=$dado['cpf'] ?>">
+                        <input type="text" class="form-control" name="cpf" placeholder="CPF" disabled data-inputmask='"mask": "999.999.999-99"' data-mask value="<?=$dado['cpf'] ?>">
                     </div>
                 </div>
 
@@ -62,7 +62,7 @@ $dado = buscaMembro($conexao, $idUsuario);
                 <div class="form-group">
                     <label for="celular" class="col-sm-2 control-label">Celular</label>
                     <div class="col-sm-8">
-                        <input type="text" class="form-control" id="celular" name="celular" placeholder="Celular" disabled value="<?=$dado['celular'] ?>">
+                        <input type="text" class="form-control" id="celular" name="celular" placeholder="Celular" disabled data-inputmask='"mask": "(99) 99999-9999"' data-mask value="<?=$dado['celular'] ?>">
                     </div>
                 </div>
                 <div class="form-group">
@@ -89,7 +89,7 @@ $dado = buscaMembro($conexao, $idUsuario);
             </div>
             <!-- /.box-body -->
             <div class="box-footer">
-                <button type="submit" class="btn btn-default">Voltar</button>
+                <button type="button" onclick="goBack()" class="btn btn-default">Voltar</button>
             </div>
             <!-- /.box-footer -->
         </form>

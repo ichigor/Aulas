@@ -93,7 +93,7 @@ $template->template();
                 </div>
                 <!-- /.box-body -->
                 <div class="box-footer">
-                    <button type="submit" class="btn btn-default">Cancel</button>
+                    <button type="button" onclick="goBack()" class="btn btn-default">Cancelar</button>
                     <button type="submit" class="btn btn-success pull-right">Cadastrar</button>
                 </div>
                 <!-- /.box-footer -->

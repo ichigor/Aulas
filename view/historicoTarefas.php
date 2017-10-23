@@ -33,7 +33,7 @@ require_once "../DAO/tarefaDAO.php";
                         <td><?= $tarefa['nomeTarefa'] ?></td>
                         <td><?= $tarefa['status'] ?></td>
                         <td>
-                            <a href="dadosMembro.php?idUsuario=17 ">Colaborador 1</a>
+                            <a href="dadosMembro.php?idUsuario=24 ">Colaborador 1</a>
                         </td>
                     </tr>
 

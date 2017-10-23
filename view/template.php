@@ -75,7 +75,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
               <!-- Menu Footer-->
               <li class="user-footer">
                 <div class="pull-left">
-                  <a href="dadosMembro.php?idUsuario=17" class="btn btn-default btn-flat">Profile</a>
+                  <a href="dadosMembro.php?idUsuario=24" class="btn btn-default btn-flat">Profile</a>
                 </div>
                 <div class="pull-right">
                   <a href="../index.php" class="btn btn-default btn-flat">Sair</a>

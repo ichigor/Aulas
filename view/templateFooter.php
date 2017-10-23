@@ -130,6 +130,14 @@ immediately after the control sidebar -->
 <!-- AdminLTE for demo purposes -->
 <script src="dist/js/demo.js"></script>
 
+
+<script>
+    function goBack() {
+        window.history.back();
+    }
+</script>
+
+
 <script>
     $(function () {
         //Initialize Select2 Elements
