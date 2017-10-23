@@ -63,4 +63,8 @@ if($funcionalidade == "create"){
     $idTarefa = $_POST["idTarefa"];
     naoConcluirTarefa($conexao, $idTarefa);
     header("Location: ../view/avaliarTarefas.php");
+}elseif ($funcionalidade == "avaliation"){
+    $idTarefa = $_POST["idTarefa"];
+    enviarParaAvalicao($conexao, $idTarefa);
+    header("Location: ../view/principalColaborador.php");
 }

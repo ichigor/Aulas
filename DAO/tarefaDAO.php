@@ -61,3 +61,8 @@ function buscaTarefa($conexao, $idTarefa){
     $resultado = mysqli_query($conexao, "select * from tarefa where idTarefa={$idTarefa}");
     return mysqli_fetch_assoc($resultado);
 }
+
+function enviarParaAvalicao($conexao, $idTarefa){
+    $query = "update tarefa set status='Em avaliacao' where idTarefa ='{$idTarefa}'";
+    return mysqli_query($conexao, $query);
+}

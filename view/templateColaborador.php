@@ -75,7 +75,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             <!-- Menu Footer-->
                             <li class="user-footer">
                                 <div class="pull-left">
-                                    <a href="#" class="btn btn-default btn-flat">Profile</a>
+                                    <a href="dadosMembroColaborador.php?idUsuario=24" class="btn btn-default btn-flat">Profile</a>
                                 </div>
                                 <div class="pull-right">
                                     <a href="../index.php" class="btn btn-default btn-flat">Sair</a>
@@ -112,7 +112,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
               </span>
                     </a>
                     <ul class="treeview-menu">
-                        <li><a href="listarMembros.php">Listar Membros</a></li>
+                        <li><a href="listarMembrosColaborador.php">Listar Membros</a></li>
                     </ul>
                 </li>
                 <li class="treeview">
@@ -122,7 +122,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
               </span>
                     </a>
                     <ul class="treeview-menu">
-                        <li><a href="listarTarefas.php">Listar Tarefas</a></li>
+                        <li><a href="listarTarefasColaborador.php">Listar Tarefas</a></li>
                     </ul>
                 </li>
             </ul>
