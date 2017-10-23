@@ -15,9 +15,7 @@ require_once "../DAO/membroDAO.php";
     <h1>Lista de Membros</h1>
 
     <div class="box">
-        <div class="box-header">
-            <h3 class="box-title">*Dados de todos os membros ativos no sistema</h3>
-        </div>
+
         <!-- /.box-header -->
         <div class="box-body no-padding">
             <table class="table table-striped">
@@ -30,9 +28,10 @@ require_once "../DAO/membroDAO.php";
         $membros = listaMembrosAtivos($conexao);
         foreach ($membros as $membro) :
     ?>
-
                 <tr>
-                    <td><?= $membro['nome'] ?></td>
+                   <td>
+                       <a href="dadosMembro.php?idUsuario=<?= $membro['idUsuario'] ?> "><?= $membro['nome'] ?></a>
+                   </td>
                     <td>
                         <form class="" action="alterarMembro.php" method="post">
                             <input type="hidden" name="idUsuario" value="<?=$membro['idUsuario']?>">
@@ -48,12 +47,12 @@ require_once "../DAO/membroDAO.php";
                         </form>
                     </td>
                 </tr>
-
     <?php
         endforeach
     ?>
             </table>
         </div>
         <!-- /.box-body -->
+
     </div>
 <?php $template->templateF(); ?>

@@ -12,16 +12,16 @@ $template->template();
 require_once "../DAO/tarefaDAO.php";
 ?>
 
-    <h1>HISTORICO TAREFAS</h1>
+    <h1>Historico de todas as Tarefas</h1>
     <div class="box">
-        <div class="box-header">
-            <h3 class="box-title">Striped Full Width Table</h3>
-        </div>
+
         <!-- /.box-header -->
         <div class="box-body no-padding">
             <table class="table table-striped">
                 <tr>
                     <th>Nome</th>
+                    <th>Status</th>
+                    <th>Responsavel</th>
 
                 </tr>
                 <?php
@@ -31,7 +31,10 @@ require_once "../DAO/tarefaDAO.php";
 
                     <tr>
                         <td><?= $tarefa['nomeTarefa'] ?></td>
-
+                        <td><?= $tarefa['status'] ?></td>
+                        <td>
+                            <a href="dadosMembro.php?idUsuario=17 ">Colaborador 1</a>
+                        </td>
                     </tr>
 
                     <?php

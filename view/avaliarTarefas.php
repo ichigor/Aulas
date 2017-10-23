@@ -9,62 +9,48 @@
 require_once "../Controller/templateController.php";
 $template = new templateController();
 $template->template();
+require_once "../DAO/tarefaDAO.php";
 ?>
 
-    <h1>AVALIAR TAREFA</h1>
+    <h1>Avaliar Tarefas</h1>
     <div class="box">
-        <div class="box-header">
-            <h3 class="box-title">Striped Full Width Table</h3>
-        </div>
+
         <!-- /.box-header -->
         <div class="box-body no-padding">
             <table class="table table-striped">
                 <tr>
-                    <th style="width: 10px">#</th>
-                    <th>Task</th>
-                    <th>Progress</th>
-                    <th style="width: 40px">Label</th>
+                    <th>Nome</th>
+                    <th>Concluida</th>
+                    <th>Não concluida</th>
+
                 </tr>
-                <tr>
-                    <td>1.</td>
-                    <td>Update software</td>
-                    <td>
-                        <div class="progress progress-xs">
-                            <div class="progress-bar progress-bar-danger" style="width: 55%"></div>
-                        </div>
-                    </td>
-                    <td><span class="badge bg-red">55%</span></td>
-                </tr>
-                <tr>
-                    <td>2.</td>
-                    <td>Clean database</td>
-                    <td>
-                        <div class="progress progress-xs">
-                            <div class="progress-bar progress-bar-yellow" style="width: 70%"></div>
-                        </div>
-                    </td>
-                    <td><span class="badge bg-yellow">70%</span></td>
-                </tr>
-                <tr>
-                    <td>3.</td>
-                    <td>Cron job running</td>
-                    <td>
-                        <div class="progress progress-xs progress-striped active">
-                            <div class="progress-bar progress-bar-primary" style="width: 30%"></div>
-                        </div>
-                    </td>
-                    <td><span class="badge bg-light-blue">30%</span></td>
-                </tr>
-                <tr>
-                    <td>4.</td>
-                    <td>Fix and squish bugs</td>
-                    <td>
-                        <div class="progress progress-xs progress-striped active">
-                            <div class="progress-bar progress-bar-success" style="width: 90%"></div>
-                        </div>
-                    </td>
-                    <td><span class="badge bg-green">90%</span></td>
-                </tr>
+                <?php
+                $tarefas = listaTarefas($conexao);
+                foreach ($tarefas as $tarefa) :
+                    ?>
+
+                    <tr>
+                        <td><?= $tarefa['nomeTarefa'] ?></td>
+                        <td>
+                            <form class="" action="../Controller/tarefaController.php" method="post">
+                                <input type="hidden" name="idTarefa" value="<?=$tarefa['idTarefa']?>">
+                                <input type="hidden" name="funcionalidade" value="completed">
+                                <button class="btn btn-success"><span class="glyphicon glyphicon-ok"></span></button>
+                            </form>
+                        </td>
+                        <td>
+                            <form class="" action="../Controller/tarefaController.php" method="post">
+                                <input type="hidden" name="idTarefa" value="<?=$tarefa['idTarefa']?>">
+                                <input type="hidden" name="funcionalidade" value="incomplete">
+                                <button class="btn btn-danger"><span class="glyphicon glyphicon-remove"></span></button>
+                            </form>
+                        </td>
+
+                    </tr>
+
+                    <?php
+                endforeach
+                ?>
             </table>
         </div>
         <!-- /.box-body -->

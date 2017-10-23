@@ -17,14 +17,16 @@ $funcionalidade = $_POST["funcionalidade"];
 if($funcionalidade == "create"){
     $nomeTarefa = $_POST["nomeTarefa"];
     $frequencia = $_POST["frequencia"];
-    $designado = $_POST["designado"];
+    $idUsuario = $_POST["designado"];
     $dataInicial = $_POST["dataInicial"];
-    $dataLimite = $_POST["dataLimite"];
+    $dataFinal = $_POST["dataFinal"];
     $descricao = $_POST["descricao"];
+    $status = "Em andamento";
+    $idUsuario = 11;
 
-    $m = new Membro($nome, $usuario, $senha, $celular, $ativo, $email, $cpf, $telefone, $endereco, $rg, $tipo);
+    $t = new Tarefa($nomeTarefa, $status, $frequencia, $descricao, $dataInicial, $dataFinal, $idUsuario);
 
-    insereMembro($conexao, $m);
+    insereTarefa($conexao, $t);
 
     header("Location: ../view/principalGerente.php");
 
@@ -35,23 +37,30 @@ if($funcionalidade == "create"){
     $frequencia = $_POST["frequencia"];
     $designado = $_POST["designado"];
     $dataInicial = $_POST["dataInicial"];
-    $dataLimite = $_POST["dataLimite"];
+    $dataFinal = $_POST["dataFinal"];
     $descricao = $_POST["descricao"];
+    $status = "";
+    $idUsuario = 11;
 
-    $m = new Membro($nome, $usuario, $senha, $celular, $ativo, $email, $cpf, $telefone, $endereco, $rg, $tipo);
+    $t = new Tarefa($nomeTarefa, $status, $frequencia, $descricao, $dataInicial, $dataFinal, $idUsuario);
 
-    alteraMembro($conexao, $m, $idUsuario);
+    alteraTarefa($conexao, $t, $idTarefa);
 
     header("Location: ../view/listarTarefas.php");
 
 }elseif ($funcionalidade == "list"){
     listaTarefas($conexao);
 }elseif ($funcionalidade == "delete"){
-    $idUsuario = $_POST["idUsuario"];
-    inativarMembro($conexao, $idUsuario);
-    header("Location: ../view/listarMembros.php");
-}elseif ($funcionalidade == "active"){
-    $idUsuario = $_POST["idUsuario"];
-    ativarMembro($conexao, $idUsuario);
-    header("Location: ../view/recuperarMembro.php");
+    $idTarefa = $_POST["idTarefa"];
+    cancelarTarefa($conexao, $idTarefa);
+    header("Location: ../view/listarTarefas.php");
+}elseif ($funcionalidade == "completed"){
+    $idTarefa = $_POST["idTarefa"];
+    var_dump($idTarefa);
+    concluirTarefa($conexao, $idTarefa);
+    header("Location: ../view/avaliarTarefas.php");
+}elseif ($funcionalidade == "incomplete"){
+    $idTarefa = $_POST["idTarefa"];
+    naoConcluirTarefa($conexao, $idTarefa);
+    header("Location: ../view/avaliarTarefas.php");
 }

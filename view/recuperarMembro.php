@@ -14,9 +14,6 @@ require_once "../DAO/membroDAO.php";
 
     <h1>Recuperar Membro</h1>
     <div class="box">
-        <div class="box-header">
-            <h3 class="box-title">*Membros desativados no sistema</h3>
-        </div>
         <!-- /.box-header -->
         <div class="box-body no-padding">
             <table class="table table-striped">
@@ -31,12 +28,14 @@ require_once "../DAO/membroDAO.php";
                     ?>
 
                     <tr>
-                        <td><?= $membro['nome'] ?></td>
+                        <td>
+                            <a href="dadosMembro.php?idUsuario=<?= $membro['idUsuario'] ?> "><?= $membro['nome'] ?></a>
+                        </td>
                         <td>
                             <form class="" action="../Controller/membroController.php" method="post">
                                 <input type="hidden" name="idUsuario" value="<?=$membro['idUsuario']?>">
                                 <input type="hidden" name="funcionalidade" value="active">
-                                <button class="btn btn-success"><span class="glyphicon glyphicon-ok"></span></button>
+                                <button class="btn btn-info"><span class="glyphicon glyphicon-plus"></span></button>
                             </form>
                         </td>
 

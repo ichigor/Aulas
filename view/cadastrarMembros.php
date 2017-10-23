@@ -18,7 +18,7 @@ $template->template();
                     <div class="form-group ">
                         <label for="cpf" class="col-sm-2 control-label">CPF</label>
                         <div class="col-sm-2">
-                            <input type="text" class="form-control" name="cpf" placeholder="CPF" data-inputmask='"mask": "(999) 999-9999"' data-mask>
+                            <input type="text" class="form-control" name="cpf" placeholder="CPF" data-inputmask='"mask": "999.999.999-99"' data-mask>
                         </div>
                     </div>
                     <input type="hidden" value="create" name="funcionalidade">
@@ -55,13 +55,13 @@ $template->template();
                     <div class="form-group">
                         <label for="celular" class="col-sm-2 control-label">Celular</label>
                         <div class="col-sm-8">
-                            <input type="text" class="form-control" id="celular" name="celular" placeholder="Celular">
+                            <input type="text" class="form-control" id="celular" name="celular" placeholder="Celular" data-inputmask='"mask": "(99) 99999-9999"' data-mask>
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="telefone" class="col-sm-2 control-label">Telefone Fixo</label>
                         <div class="col-sm-8">
-                            <input type="text" class="form-control" placeholder="Telefone Fixo" name="telefone" data-inputmask='"mask": "(999) 999-9999"' data-mask>
+                            <input type="text" class="form-control" placeholder="Telefone Fixo" name="telefone" data-inputmask='"mask": "(99) 9999-9999"' data-mask>
                         </div>
                     </div>
                     <div class="form-group">
@@ -76,14 +76,14 @@ $template->template();
                         <label for="funcao" class="col-sm-2 control-label">Função</label>
                         <div class="col-sm-8">
                             <label>
-                                <input type="radio" name="tipo" class="icheckbox_flat-red" checked value="1">
+                                <input type="radio" name="tipo" class="icheckbox_flat-red" checked value="Gerente">
                             </label>
                             <label>
                                 Gerente
                             </label>
                             <br>
                             <label>
-                                <input type="radio" name="tipo" class="icheckbox_flat-red" value="0">
+                                <input type="radio" name="tipo" class="icheckbox_flat-red" value="Colaborador">
                             </label>
                             <label>
                                 Colaborador

@@ -14,9 +14,6 @@ require_once "../DAO/tarefaDAO.php";
 
     <h1>Lista de Tarefas</h1>
     <div class="box">
-        <div class="box-header">
-            <h3 class="box-title">Tarefas cadastradas no sistema</h3>
-        </div>
         <!-- /.box-header -->
         <div class="box-body no-padding">
             <table class="table table-striped">

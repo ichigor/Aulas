@@ -16,10 +16,10 @@ require_once("../util/conecta.php");
 //cancelarTarefa($conexao, 3);
 
 
-//verificar problema na data xD
-function insereTarefa($conexao, $nomeTarefa, $frequencia, $descricao,  $dataInicial, $dataLimite, $designado){
+
+function insereTarefa($conexao, $t){
     $query="insert into tarefa (nomeTarefa, status, frequencia, descricao, dataInicial, dataFinal, idUsuario) values
-            ('{$nomeTarefa}','Em andamento','{$frequencia}','{$descricao}','{$dataInicial}', '{$dataLimite}',10)";
+            ('{$t->nomeTarefa}','{$t->status}','{$t->frequencia}','{$t->descricao}','{$t->dataInicial}', '{$t->dataFinal}','{$t->idUsuario}')";
     return mysqli_query($conexao, $query);
 }
 
@@ -37,4 +37,27 @@ function listaTarefas($conexao)
 function cancelarTarefa($conexao, $idTarefa){
     $query = "update tarefa set status='Cancelada' where idTarefa ='{$idTarefa}'";
     return mysqli_query($conexao, $query);
+}
+
+function concluirTarefa($conexao, $idTarefa){
+    $query = "update tarefa set status='Completo' where idTarefa ='{$idTarefa}'";
+    return mysqli_query($conexao, $query);
+}
+
+function naoConcluirTarefa($conexao, $idTarefa){
+    $query = "update tarefa set status='Incompleto' where idTarefa ='{$idTarefa}'";
+    return mysqli_query($conexao, $query);
+}
+
+function alteraTarefa($conexao, $t, $idTarefa){
+
+    $query = "update tarefa set nomeTarefa= '{$t->nomeTarefa}', frequencia= '{$t->frequencia}',descricao = '{$t->descricao}', dataInicial= '{$t->dataInicial}', dataFinal='{$t->dataFinal}', idUsuario='{$t->idUsuario}' where idTarefa ='{$idTarefa}'";
+    return mysqli_query($conexao, $query);
+
+}
+
+
+function buscaTarefa($conexao, $idTarefa){
+    $resultado = mysqli_query($conexao, "select * from tarefa where idTarefa={$idTarefa}");
+    return mysqli_fetch_assoc($resultado);
 }
