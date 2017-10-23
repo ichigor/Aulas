@@ -11,9 +11,9 @@ $template = new templateController();
 $template->template();
 require_once "../DAO/membroDAO.php";
 ?>
-
+    <div class="col-md-12">
     <h1>Recuperar Membro</h1>
-    <div class="box">
+    <div class="box box-danger">
         <!-- /.box-header -->
         <div class="box-body no-padding">
             <table class="table table-striped">
@@ -46,6 +46,7 @@ require_once "../DAO/membroDAO.php";
                 ?>
             </table>
         </div>
+    </div>
         <!-- /.box-body -->
     </div>
 <?php $template->templateF(); ?>

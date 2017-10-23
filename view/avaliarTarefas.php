@@ -11,9 +11,9 @@ $template = new templateController();
 $template->template();
 require_once "../DAO/tarefaDAO.php";
 ?>
-
+    <div class="col-md-12">
     <h1>Avaliar Tarefas</h1>
-    <div class="box">
+    <div class="box box-danger">
 
         <!-- /.box-header -->
         <div class="box-body no-padding">
@@ -30,7 +30,9 @@ require_once "../DAO/tarefaDAO.php";
                     ?>
 
                     <tr>
-                        <td><?= $tarefa['nomeTarefa'] ?></td>
+                        <td>
+                            <a href="dadosTarefa.php?idTarefa=<?= $tarefa['idTarefa'] ?> "><?= $tarefa['nomeTarefa'] ?></a>
+                        </td>
                         <td>
                             <form class="" action="../Controller/tarefaController.php" method="post">
                                 <input type="hidden" name="idTarefa" value="<?=$tarefa['idTarefa']?>">
@@ -53,6 +55,7 @@ require_once "../DAO/tarefaDAO.php";
                 ?>
             </table>
         </div>
+    </div>
         <!-- /.box-body -->
     </div>
 <?php $template->templateF(); ?>

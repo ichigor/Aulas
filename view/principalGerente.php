@@ -16,8 +16,9 @@ $template ->template();
 require_once "../DAO/tarefaDAO.php";
 ?>
 
+<div class="col-md-12">
 <h1>Tarefas para o dia de Hoje</h1>
-<div class="box">
+<div class="box box-danger">
 
     <!-- /.box-header -->
     <div class="box-body no-padding">
@@ -46,6 +47,7 @@ require_once "../DAO/tarefaDAO.php";
             ?>
         </table>
     </div>
+</div>
     <!-- /.box-body -->
 </div>
 <?php

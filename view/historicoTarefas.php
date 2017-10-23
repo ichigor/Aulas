@@ -11,9 +11,9 @@ $template = new templateController();
 $template->template();
 require_once "../DAO/tarefaDAO.php";
 ?>
-
+    <div class="col-md-12">
     <h1>Historico de todas as Tarefas</h1>
-    <div class="box">
+    <div class="box box-danger">
 
         <!-- /.box-header -->
         <div class="box-body no-padding">
@@ -30,7 +30,9 @@ require_once "../DAO/tarefaDAO.php";
                     ?>
 
                     <tr>
-                        <td><?= $tarefa['nomeTarefa'] ?></td>
+                        <td>
+                            <a href="dadosTarefa.php?idTarefa=<?= $tarefa['idTarefa'] ?> "><?= $tarefa['nomeTarefa'] ?></a>
+                        </td>
                         <td><?= $tarefa['status'] ?></td>
                         <td>
                             <a href="dadosMembro.php?idUsuario=24 ">Colaborador 1</a>
@@ -42,6 +44,7 @@ require_once "../DAO/tarefaDAO.php";
                 ?>
             </table>
         </div>
+    </div>
         <!-- /.box-body -->
     </div>
 <?php $template->templateF(); ?>

@@ -24,7 +24,7 @@ $dado = buscaMembro($conexao, $idUsuario);
         <!-- /.box-header -->
         <!-- form start -->
         <form class="form-horizontal" action="../Controller/membroController.php" method="POST">
-            <input type="hidden" value="voltar" name="funcionalidade">
+
             <input type="hidden" value="<?= $dado['idUsuario'] ?>" name="idUsuario">
             <input type="hidden" value="<?= $dado['cpf'] ?>" name="cpf">
             <div class="box-body">

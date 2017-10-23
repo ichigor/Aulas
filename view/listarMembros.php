@@ -11,10 +11,10 @@ $template = new templateController();
 $template->template();
 require_once "../DAO/membroDAO.php";
 ?>
-
+    <div class="col-md-12">
     <h1>Lista de Membros</h1>
 
-    <div class="box">
+    <div class="box box-danger">
 
         <!-- /.box-header -->
         <div class="box-body no-padding">
@@ -54,5 +54,6 @@ require_once "../DAO/membroDAO.php";
         </div>
         <!-- /.box-body -->
 
+    </div>
     </div>
 <?php $template->templateF(); ?>
