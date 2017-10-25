@@ -6,3 +6,8 @@
  * Time: 14:17
  */
 $conexao = mysqli_connect("localhost", "root", "", "projetoIntegrador");
+
+
+if (!$conexao->set_charset("utf8")) {
+    exit();
+}

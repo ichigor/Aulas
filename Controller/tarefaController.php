@@ -8,13 +8,12 @@
 
 
 require_once "../model/Tarefa.php";
-require_once  "../DAO/tarefaDAO.php";
+require_once "../DAO/tarefaDAO.php";
 
 $funcionalidade = $_POST["funcionalidade"];
 
 
-
-if($funcionalidade == "create"){
+if ($funcionalidade == "create") {
     $nomeTarefa = $_POST["nomeTarefa"];
     $frequencia = $_POST["frequencia"];
     $idUsuario = $_POST["designado"];
@@ -30,7 +29,7 @@ if($funcionalidade == "create"){
 
     header("Location: ../view/principalGerente.php");
 
-}elseif ($funcionalidade == "update"){
+} elseif ($funcionalidade == "update") {
 
     $idTarefa = $_POST["idTarefa"];
     $nomeTarefa = $_POST["nomeTarefa"];
@@ -48,22 +47,22 @@ if($funcionalidade == "create"){
 
     header("Location: ../view/listarTarefas.php");
 
-}elseif ($funcionalidade == "list"){
+} elseif ($funcionalidade == "list") {
     listaTarefas($conexao);
-}elseif ($funcionalidade == "delete"){
+} elseif ($funcionalidade == "delete") {
     $idTarefa = $_POST["idTarefa"];
     cancelarTarefa($conexao, $idTarefa);
     header("Location: ../view/listarTarefas.php");
-}elseif ($funcionalidade == "completed"){
+} elseif ($funcionalidade == "completed") {
     $idTarefa = $_POST["idTarefa"];
     var_dump($idTarefa);
     concluirTarefa($conexao, $idTarefa);
     header("Location: ../view/avaliarTarefas.php");
-}elseif ($funcionalidade == "incomplete"){
+} elseif ($funcionalidade == "incomplete") {
     $idTarefa = $_POST["idTarefa"];
     naoConcluirTarefa($conexao, $idTarefa);
     header("Location: ../view/avaliarTarefas.php");
-}elseif ($funcionalidade == "avaliation"){
+} elseif ($funcionalidade == "avaliation") {
     $idTarefa = $_POST["idTarefa"];
     enviarParaAvalicao($conexao, $idTarefa);
     header("Location: ../view/principalColaborador.php");

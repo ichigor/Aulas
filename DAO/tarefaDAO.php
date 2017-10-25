@@ -8,17 +8,9 @@
 
 require_once("../util/conecta.php");
 
-
-
-
-//insereTarefa($conexao, $nomeTarefa, $frequencia, $descricao, $dataInicial, $dataLimite, $designado);
-//listaTarefas($conexao);
-//cancelarTarefa($conexao, 3);
-
-
-
-function insereTarefa($conexao, $t){
-    $query="insert into tarefa (nomeTarefa, status, frequencia, descricao, dataInicial, dataFinal, idUsuario) values
+function insereTarefa($conexao, $t)
+{
+    $query = "insert into tarefa (nomeTarefa, status, frequencia, descricao, dataInicial, dataFinal, idUsuario) values
             ('{$t->nomeTarefa}','{$t->status}','{$t->frequencia}','{$t->descricao}','{$t->dataInicial}', '{$t->dataFinal}','{$t->idUsuario}')";
     return mysqli_query($conexao, $query);
 }
@@ -34,22 +26,26 @@ function listaTarefas($conexao)
     return $tarefas;
 }
 
-function cancelarTarefa($conexao, $idTarefa){
+function cancelarTarefa($conexao, $idTarefa)
+{
     $query = "update tarefa set status='Cancelada' where idTarefa ='{$idTarefa}'";
     return mysqli_query($conexao, $query);
 }
 
-function concluirTarefa($conexao, $idTarefa){
+function concluirTarefa($conexao, $idTarefa)
+{
     $query = "update tarefa set status='Completo' where idTarefa ='{$idTarefa}'";
     return mysqli_query($conexao, $query);
 }
 
-function naoConcluirTarefa($conexao, $idTarefa){
+function naoConcluirTarefa($conexao, $idTarefa)
+{
     $query = "update tarefa set status='Incompleto' where idTarefa ='{$idTarefa}'";
     return mysqli_query($conexao, $query);
 }
 
-function alteraTarefa($conexao, $t, $idTarefa){
+function alteraTarefa($conexao, $t, $idTarefa)
+{
 
     $query = "update tarefa set nomeTarefa= '{$t->nomeTarefa}', frequencia= '{$t->frequencia}',descricao = '{$t->descricao}', dataInicial= '{$t->dataInicial}', dataFinal='{$t->dataFinal}', idUsuario='{$t->idUsuario}' where idTarefa ='{$idTarefa}'";
     return mysqli_query($conexao, $query);
@@ -57,12 +53,14 @@ function alteraTarefa($conexao, $t, $idTarefa){
 }
 
 
-function buscaTarefa($conexao, $idTarefa){
+function buscaTarefa($conexao, $idTarefa)
+{
     $resultado = mysqli_query($conexao, "select * from tarefa where idTarefa={$idTarefa}");
     return mysqli_fetch_assoc($resultado);
 }
 
-function enviarParaAvalicao($conexao, $idTarefa){
+function enviarParaAvalicao($conexao, $idTarefa)
+{
     $query = "update tarefa set status='Em avaliacao' where idTarefa ='{$idTarefa}'";
     return mysqli_query($conexao, $query);
 }
