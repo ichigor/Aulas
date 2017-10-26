@@ -1,3 +1,6 @@
+<?php
+error_reporting(E_ALL ^ E_NOTICE);
+require_once("../util/mostraAlerta.php"); ?>
 <!DOCTYPE html>
 <!--
 This is a starter template page. Use this page to start your new project from
@@ -41,103 +44,102 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <body class="hold-transition skin-red sidebar-mini">
 <div class="wrapper">
 
-  <!-- Main Header -->
-  <header class="main-header">
+    <!-- Main Header -->
+    <header class="main-header">
 
-    <!-- Logo -->
-    <a href="principalGerente.php" class="logo">
-      <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg"><b>Controle de Tarefas</b></span>
-    </a>
+        <!-- Logo -->
+        <a href="principalGerente.php" class="logo">
+            <!-- logo for regular state and mobile devices -->
+            <span class="logo-lg"><b>Controle de Tarefas</b></span>
+        </a>
 
-    <!-- Header Navbar -->
-    <nav class="navbar navbar-static-top" role="navigation">
-      <!-- Sidebar toggle button-->
-      <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
-        <span class="sr-only">Toggle navigation</span>
-      </a>
-      <!-- Navbar Right Menu -->
-      <div class="navbar-custom-menu">
-        <ul class="nav navbar-nav">
-
-
-
-          <!-- User Account Menu -->
-          <li class="dropdown user user-menu">
-            <!-- Menu Toggle Button -->
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <!-- The user image in the navbar-->
-                <div class="col-md-3 col-sm-4"><i class="fa fa-fw fa-user"></i></div>
-              <!-- hidden-xs hides the username on small devices so only the image appears. -->
-              <span class="hidden-xs">Gerente</span>
+        <!-- Header Navbar -->
+        <nav class="navbar navbar-static-top" role="navigation">
+            <!-- Sidebar toggle button-->
+            <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+                <span class="sr-only">Toggle navigation</span>
             </a>
-            <ul class="dropdown-menu">
-              <!-- Menu Footer-->
-              <li class="user-footer">
-                <div class="pull-left">
-                  <a href="dadosMembro.php?idUsuario=24" class="btn btn-default btn-flat">Profile</a>
+            <!-- Navbar Right Menu -->
+            <div class="navbar-custom-menu">
+                <ul class="nav navbar-nav">
+
+
+                    <!-- User Account Menu -->
+                    <li class="dropdown user user-menu">
+                        <!-- Menu Toggle Button -->
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <!-- The user image in the navbar-->
+                            <div class="col-md-3 col-sm-4"><i class="fa fa-fw fa-user"></i></div>
+                            <!-- hidden-xs hides the username on small devices so only the image appears. -->
+                            <span class="hidden-xs">Gerente</span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <!-- Menu Footer-->
+                            <li class="user-footer">
+                                <div class="pull-left">
+                                    <a href="dadosMembro.php?idUsuario=24" class="btn btn-default btn-flat">Profile</a>
+                                </div>
+                                <div class="pull-right">
+                                    <a href="../index.php" class="btn btn-default btn-flat">Sair</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <!-- Left side column. contains the logo and sidebar -->
+    <aside class="main-sidebar">
+
+        <!-- sidebar: style can be found in sidebar.less -->
+        <section class="sidebar">
+
+            <!-- Sidebar user panel (optional) -->
+            <div class="user-panel" style="background-color: #fff8f8">
+                <div>
+                    <img src="dist/img/logo-pro-imoveis.png">
                 </div>
-                <div class="pull-right">
-                  <a href="../index.php" class="btn btn-default btn-flat">Sair</a>
-                </div>
-              </li>
+            </div>
+
+            <!-- Sidebar Menu -->
+            <ul class="sidebar-menu" data-widget="tree">
+
+                <!-- Optionally, you can add icons to the links -->
+                <li class="active"><a href="principalGerente.php"><i class="fa fa-home"></i> <span>Home</span></a></li>
+                <li class="treeview">
+                    <a href="#"><i class="fa fa-users"></i> <span>Membros Equipe</span>
+                        <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+              </span>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li><a href="CadastrarMembros.php">Cadastrar Membro</a></li>
+                        <li><a href="listarMembros.php">Listar Membros</a></li>
+                        <li><a href="recuperarMembro.php">Recuperar Membro</a></li>
+                    </ul>
+                </li>
+                <li class="treeview">
+                    <a href="#"><i class="fa fa-tasks"></i> <span>Tarefas</span>
+                        <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+              </span>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li><a href="cadastrarTarefa.php">Cadastrar Tarefa</a></li>
+                        <li><a href="listarTarefas.php">Listar Tarefas</a></li>
+                        <li><a href="historicoTarefas.php">Historico Tarefas</a></li>
+                        <li><a href="avaliarTarefas.php">Avaliar Tarefas</a></li>
+                    </ul>
+                </li>
             </ul>
-          </li>
-        </ul>
-      </div>
-    </nav>
-  </header>
-  <!-- Left side column. contains the logo and sidebar -->
-  <aside class="main-sidebar">
+            <!-- /.sidebar-menu -->
+        </section>
+        <!-- /.sidebar -->
+    </aside>
 
-    <!-- sidebar: style can be found in sidebar.less -->
-    <section class="sidebar">
-
-      <!-- Sidebar user panel (optional) -->
-      <div class="user-panel" style="background-color: #fff8f8">
-        <div>
-          <img src="dist/img/logo-pro-imoveis.png" >
-        </div>
-      </div>
-
-      <!-- Sidebar Menu -->
-      <ul class="sidebar-menu" data-widget="tree">
-
-        <!-- Optionally, you can add icons to the links -->
-        <li class="active"><a href="principalGerente.php"><i class="fa fa-home"></i> <span>Home</span></a></li>
-        <li class="treeview">
-          <a href="#"><i class="fa fa-users"></i> <span>Membros Equipe</span>
-            <span class="pull-right-container">
-                <i class="fa fa-angle-left pull-right"></i>
-              </span>
-          </a>
-          <ul class="treeview-menu">
-            <li><a href="CadastrarMembros.php">Cadastrar Membro</a></li>
-            <li><a href="listarMembros.php">Listar Membros</a></li>
-              <li><a href="recuperarMembro.php">Recuperar Membro</a></li>
-          </ul>
-        </li>
-          <li class="treeview">
-              <a href="#"><i class="fa fa-tasks"></i> <span>Tarefas</span>
-                  <span class="pull-right-container">
-                <i class="fa fa-angle-left pull-right"></i>
-              </span>
-              </a>
-              <ul class="treeview-menu">
-                  <li><a href="cadastrarTarefa.php">Cadastrar Tarefa</a></li>
-                  <li><a href="listarTarefas.php">Listar Tarefas</a></li>
-                  <li><a href="historicoTarefas.php">Historico Tarefas</a></li>
-                  <li><a href="avaliarTarefas.php">Avaliar Tarefas</a></li>
-              </ul>
-          </li>
-      </ul>
-      <!-- /.sidebar-menu -->
-    </section>
-    <!-- /.sidebar -->
-  </aside>
-
-  <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
-    <!-- Main content -->
-    <section class="content container-fluid">
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+        <!-- Main content -->
+        <section class="content container-fluid">
 

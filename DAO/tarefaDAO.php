@@ -64,3 +64,44 @@ function enviarParaAvalicao($conexao, $idTarefa)
     $query = "update tarefa set status='Em avaliacao' where idTarefa ='{$idTarefa}'";
     return mysqli_query($conexao, $query);
 }
+
+function buscaTarefaEmAndamento($conexao)
+{
+    $tarefas = array();
+    $resultado = mysqli_query($conexao, "select * from tarefa where status = 'Em andamento' and dataFinal = CURDATE()");
+    while ($tarefa = mysqli_fetch_assoc($resultado)) {
+        array_push($tarefas, $tarefa);
+    }
+    return $tarefas;
+}
+
+function buscaTarefaEmAvaliacao($conexao)
+{
+    $tarefas = array();
+    $resultado = mysqli_query($conexao, "select * from tarefa where status = 'Em avaliacao'");
+    while ($tarefa = mysqli_fetch_assoc($resultado)) {
+        array_push($tarefas, $tarefa);
+    }
+    return $tarefas;
+}
+
+function buscaTarefaDia($conexao)
+{
+    $tarefas = array();
+    $resultado = mysqli_query($conexao, "select * from tarefa where dataFinal = CURDATE()");
+    while ($tarefa = mysqli_fetch_assoc($resultado)) {
+        array_push($tarefas, $tarefa);
+    }
+    return $tarefas;
+}
+
+function buscaTarefaNaoCancelada($conexao)
+{
+    $tarefas = array();
+    $resultado = mysqli_query($conexao, "select * from tarefa where status <> 'Cancelada'");
+    while ($tarefa = mysqli_fetch_assoc($resultado)) {
+        array_push($tarefas, $tarefa);
+    }
+    return $tarefas;
+}
+

@@ -25,7 +25,7 @@ require_once "../DAO/tarefaDAO.php";
                         <th>Frequencia</th>
                     </tr>
                     <?php
-                    $tarefas = listaTarefas($conexao);
+                    $tarefas = buscaTarefaNaoCancelada($conexao);
                     foreach ($tarefas as $tarefa) :
                         ?>
 

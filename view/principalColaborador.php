@@ -30,7 +30,7 @@ require_once "../DAO/tarefaDAO.php";
 
                 </tr>
                 <?php
-                $tarefas = listaTarefas($conexao);
+                $tarefas = buscaTarefaEmAndamento($conexao);
                 foreach ($tarefas as $tarefa) :
                     ?>
 

@@ -11,6 +11,8 @@ $template = new templateController();
 $template->template();
 require_once "../DAO/tarefaDAO.php";
 ?>
+<?php mostraAlerta("success");
+mostraAlerta("warning");?>
     <div class="col-md-12">
     <h1>Lista de Tarefas</h1>
     <div class="box box-danger">
@@ -23,7 +25,7 @@ require_once "../DAO/tarefaDAO.php";
                     <th>Cancelar</th>
                 </tr>
                 <?php
-                $tarefas = listaTarefas($conexao);
+                $tarefas = buscaTarefaNaoCancelada($conexao);
                 foreach ($tarefas as $tarefa) :
                     ?>
 

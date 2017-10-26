@@ -9,6 +9,7 @@
 
 require_once "../model/Tarefa.php";
 require_once "../DAO/tarefaDAO.php";
+require_once "../util/mostraAlerta.php";
 
 $funcionalidade = $_POST["funcionalidade"];
 
@@ -27,7 +28,9 @@ if ($funcionalidade == "create") {
 
     insereTarefa($conexao, $t);
 
+    $_SESSION["success"] = "Sua tarefa foi criada com sucesso ! ! !";
     header("Location: ../view/principalGerente.php");
+    die();
 
 } elseif ($funcionalidade == "update") {
 
@@ -45,25 +48,33 @@ if ($funcionalidade == "create") {
 
     alteraTarefa($conexao, $t, $idTarefa);
 
+    $_SESSION["success"] = "Sua tarefa foi atualizada com sucesso ! ! !";
     header("Location: ../view/listarTarefas.php");
 
-} elseif ($funcionalidade == "list") {
-    listaTarefas($conexao);
 } elseif ($funcionalidade == "delete") {
     $idTarefa = $_POST["idTarefa"];
+    $_SESSION["warning"] = "A tarefa selecionado foi cancelada com sucesso ! ! !";
     cancelarTarefa($conexao, $idTarefa);
     header("Location: ../view/listarTarefas.php");
 } elseif ($funcionalidade == "completed") {
     $idTarefa = $_POST["idTarefa"];
-    var_dump($idTarefa);
+    $_SESSION["success"] = "A tarefa selecionado foi concluida com sucesso ! ! !";
     concluirTarefa($conexao, $idTarefa);
     header("Location: ../view/avaliarTarefas.php");
 } elseif ($funcionalidade == "incomplete") {
     $idTarefa = $_POST["idTarefa"];
+    $_SESSION["warning"] = "A tarefa selecionado foi definida como não concluida ! ! !";
     naoConcluirTarefa($conexao, $idTarefa);
     header("Location: ../view/avaliarTarefas.php");
 } elseif ($funcionalidade == "avaliation") {
     $idTarefa = $_POST["idTarefa"];
+    $_SESSION["success"] = "A tarefa selecionado foi enviada para ser avaliada ! ! !";
     enviarParaAvalicao($conexao, $idTarefa);
     header("Location: ../view/principalColaborador.php");
 }
+//fazer uma mais para reavaliar
+//fazer uma mais para reavaliar
+//fazer uma mais para reavaliar
+//fazer uma mais para reavaliar
+//fazer uma mais para reavaliar
+//fazer uma mais para reavaliar
